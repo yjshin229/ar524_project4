@@ -21,7 +21,7 @@ const ProtostarScreen = () => {
           stringArr={[
             "The center mass of hydrogen is the protostar.",
             "The protostar will start burning hydrogen to make helium.",
-            "Should I burn helium slower or faster?",
+            "Should I burn hydrogen slower or faster?",
           ]}
           onComplete={handleFirstComplete}
           fadeOut
@@ -32,21 +32,10 @@ const ProtostarScreen = () => {
             type={"body"}
             stringArr={[
               "Burning helium slower resulted a protostar to burn much ",
-            ]}
+            ]} 
             onComplete={handleFirstComplete}
             fadeOut
           />
-        ):
-        //high-mass star
-        <TypeWriter
-          type={"body"}
-          stringArr={[
-            "Burning helium faster resulted a protostar to burn much hotter and brighter.",
-            "Becoming a high-mass star.",
-          ]}
-          onComplete={handleFirstComplete}
-          fadeOut
-        />}
          */}
       </Description>
       {firstDone && (

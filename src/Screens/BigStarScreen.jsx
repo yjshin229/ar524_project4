@@ -13,51 +13,25 @@ const BigStarScreen = () => {
 
   return (
     <ScreenContainer>
-      <TypeWriter type={"subTitle"} stringArr={["Protostar"]} />
+      <TypeWriter type={"subTitle"} stringArr={["High Mass Star"]} />
       <ImgContainer src={bigStar} />
       <Description>
         <TypeWriter
           type={"body"}
           stringArr={[
-            "The center mass of hydrogen is the protostar.",
-            "The protostar will start burning hydrogen to make helium.",
-            "Should I burn helium slower or faster?",
+            "High mass stars burn much hotter and brighter giving the star a more blue appearance.",
+            "The star will spend most of its life burning hydrogen in its core.",
+            "After billions of years the core is hot enough to fuse hydrogen into helium on the outer shell of the core",
+            "The star is expanding...",
           ]}
           onComplete={handleFirstComplete}
           fadeOut
         />
-        {/*   
-        {option === "slower" ? (
-            <TypeWriter
-            type={"body"}
-            stringArr={[
-              "Burning helium slower resulted a protostar to burn much ",
-            ]}
-            onComplete={handleFirstComplete}
-            fadeOut
-          />
-        ):
-        //high-mass star
-        <TypeWriter
-          type={"body"}
-          stringArr={[
-            "Burning helium faster resulted a protostar to burn much hotter and brighter.",
-            "Becoming a high-mass star.",
-          ]}
-          onComplete={handleFirstComplete}
-          fadeOut
-        />}
-         */}
       </Description>
       {firstDone && (
-        <Options>
-          <Option to={"smallstar"}>
-            <TypeWriter type={"body"} stringArr={["Slower ->"]} />
-          </Option>
-          <Option to={"bigstar"}>
-            <TypeWriter type={"body"} stringArr={["Faster ->"]} />
-          </Option>
-        </Options>
+        <Next>
+          <TypeWriter type={"body"} stringArr={["Next ->"]} />
+        </Next>
       )}
     </ScreenContainer>
   );
