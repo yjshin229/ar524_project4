@@ -3,12 +3,20 @@ import styled from "styled-components";
 import smallStar from "../assets/Small_star.gif";
 import TypeWriter from "../components/TypeWriter";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setProgress } from "../redux/actions";
 
 const SmallStarScreen = () => {
   const [firstDone, setFirstDone] = useState(false);
 
   const handleFirstComplete = () => {
     setFirstDone(true);
+  };
+
+  const dispatch = useDispatch();
+
+  const updateProgress = (newProgress) => {
+    dispatch(setProgress(newProgress));
   };
 
   return (
@@ -29,7 +37,7 @@ const SmallStarScreen = () => {
         />
       </Description>
       {firstDone && (
-        <Next to={"/red-giant"}>
+        <Next to={"/red-giant"} onClick={() => updateProgress("old_age")}>
           <TypeWriter type={"body"} stringArr={["Next ->"]} />
         </Next>
       )}

@@ -14,8 +14,6 @@ const GasCloudScreen = () => {
   return (
     <GasCloudContainer>
       <TypeWriter type={"subTitle"} stringArr={["Stellar Nebula"]} />
-
-      {/* </Title> */}
       <GasCloud src={gasCloud} />
       <Description>
         <TypeWriter

@@ -17,10 +17,22 @@ import SupernovaScreen from "./Screens/SupernovaScreen";
 import BlackholeScreen from "./Screens/BlackholeScreen";
 import NeutronStarScreen from "./Screens/NeutronStarScreen";
 import ProgressBar from "./components/ProgressBar";
+import { useDispatch } from "react-redux";
+import { setProgress } from "./redux/actions";
+import { useEffect } from "react";
 
 function App() {
+  const dispatch = useDispatch();
+
+  const updateProgress = (newProgress) => {
+    dispatch(setProgress(newProgress));
+  };
+
+  useEffect(() => {
+    updateProgress("");
+  }, []);
   return (
-    <AppContainer className="App">
+    <AppContainer>
       <BackgroundImage src={background} alt="background" />
       <ProgressBar />
       <Routes>
@@ -55,6 +67,7 @@ const AppContainer = styled.div`
   display: flex;
   align-items: center;
   color: white;
+  text-align: center;
 `;
 
 const BackgroundImage = styled.img`

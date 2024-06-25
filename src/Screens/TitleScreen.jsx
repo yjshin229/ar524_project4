@@ -2,13 +2,21 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import TypeWriter from "../components/TypeWriter";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setProgress } from "../redux/actions";
 
 const TitleScreen = () => {
   const [firstDone, setFirstDone] = useState(false);
+  const dispatch = useDispatch();
+
+  const updateProgress = (newProgress) => {
+    dispatch(setProgress(newProgress));
+  };
 
   const handleFirstComplete = () => {
     setFirstDone(true);
   };
+
   return (
     <TitleContainer>
       <TypeWriter
@@ -17,7 +25,7 @@ const TitleScreen = () => {
         stringArr={["Life Cycle of a Star"]}
         onComplete={handleFirstComplete}
       />
-      <Explore to={"/gas-cloud"}>
+      <Explore to={"/gas-cloud"} onClick={() => updateProgress("birth")}>
         {firstDone && (
           <TypeWriter
             type={"subTitle"}

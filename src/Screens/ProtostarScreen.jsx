@@ -3,12 +3,20 @@ import styled from "styled-components";
 import protostar from "../assets/Protostar.gif";
 import TypeWriter from "../components/TypeWriter";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setProgress } from "../redux/actions";
 
 const ProtostarScreen = () => {
   const [firstDone, setFirstDone] = useState(false);
 
   const handleFirstComplete = () => {
     setFirstDone(true);
+  };
+
+  const dispatch = useDispatch();
+
+  const updateProgress = (newProgress) => {
+    dispatch(setProgress(newProgress));
   };
 
   return (
@@ -29,10 +37,16 @@ const ProtostarScreen = () => {
       </Description>
       {firstDone && (
         <Options>
-          <Option to={"/smallstar"}>
+          <Option
+            to={"/small-star"}
+            onClick={() => updateProgress("main_sequence")}
+          >
             <TypeWriter type={"body"} stringArr={["Slow ->"]} />
           </Option>
-          <Option to={"/bigstar"}>
+          <Option
+            to={"/big-star"}
+            onClick={() => updateProgress("main_sequence")}
+          >
             <TypeWriter type={"body"} stringArr={["Fast ->"]} />
           </Option>
         </Options>

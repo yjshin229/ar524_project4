@@ -3,12 +3,20 @@ import styled from "styled-components";
 import redGiant from "../assets/Red_giant_super_giant.gif";
 import TypeWriter from "../components/TypeWriter";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setProgress } from "../redux/actions";
 
 const RedSuperGiantScreen = () => {
   const [firstDone, setFirstDone] = useState(false);
 
   const handleFirstComplete = () => {
     setFirstDone(true);
+  };
+
+  const dispatch = useDispatch();
+
+  const updateProgress = (newProgress) => {
+    dispatch(setProgress(newProgress));
   };
 
   return (
@@ -31,7 +39,7 @@ const RedSuperGiantScreen = () => {
         />
       </Description>
       {firstDone && (
-        <Next to={"/planetary-nebula"}>
+        <Next to={"/planetary-nebula"} onClick={() => updateProgress("death")}>
           <TypeWriter type={"body"} stringArr={["Next ->"]} />
         </Next>
       )}

@@ -3,12 +3,19 @@ import styled from "styled-components";
 import blackhole from "../assets/Blackhole.gif";
 import TypeWriter from "../components/TypeWriter";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setProgress } from "../redux/actions";
 
 const BlackholeScreen = () => {
   const [firstDone, setFirstDone] = useState(false);
 
   const handleFirstComplete = () => {
     setFirstDone(true);
+  };
+  const dispatch = useDispatch();
+
+  const updateProgress = (newProgress) => {
+    dispatch(setProgress(newProgress));
   };
 
   return (
@@ -29,7 +36,7 @@ const BlackholeScreen = () => {
         />
       </Description>
       {firstDone && (
-        <Next to={"/"}>
+        <Next to={"/"} onClick={() => updateProgress("")}>
           <TypeWriter type={"body"} stringArr={["Start over ->"]} />
         </Next>
       )}

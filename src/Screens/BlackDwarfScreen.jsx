@@ -3,12 +3,20 @@ import styled from "styled-components";
 import blackDwarf from "../assets/Black_dwarf.gif";
 import TypeWriter from "../components/TypeWriter";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setProgress } from "../redux/actions";
 
 const WhiteDwarfScreen = () => {
   const [firstDone, setFirstDone] = useState(false);
 
   const handleFirstComplete = () => {
     setFirstDone(true);
+  };
+
+  const dispatch = useDispatch();
+
+  const updateProgress = (newProgress) => {
+    dispatch(setProgress(newProgress));
   };
 
   return (
@@ -28,7 +36,7 @@ const WhiteDwarfScreen = () => {
         />
       </Description>
       {firstDone && (
-        <Next to={"/"}>
+        <Next to={"/"} onClick={() => updateProgress("")}>
           <TypeWriter type={"body"} stringArr={["Start over ->"]} />
         </Next>
       )}
