@@ -21,7 +21,7 @@ const ProtostarScreen = () => {
           stringArr={[
             "The center mass of hydrogen is the protostar.",
             "The protostar will start burning hydrogen to make helium.",
-            "Should I burn hydrogen slower or faster?",
+            "How fast will you burn the hydrogen?",
           ]}
           onComplete={handleFirstComplete}
           fadeOut
@@ -30,10 +30,10 @@ const ProtostarScreen = () => {
       {firstDone && (
         <Options>
           <Option to={"/smallstar"}>
-            <TypeWriter type={"body"} stringArr={["Slower ->"]} />
+            <TypeWriter type={"body"} stringArr={["Slow ->"]} />
           </Option>
           <Option to={"/bigstar"}>
-            <TypeWriter type={"body"} stringArr={["Faster ->"]} />
+            <TypeWriter type={"body"} stringArr={["Fast ->"]} />
           </Option>
         </Options>
       )}

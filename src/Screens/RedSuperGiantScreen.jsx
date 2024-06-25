@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import smallStar from "../assets/Small_star.gif";
+import redGiant from "../assets/Red_giant_super_giant.gif";
 import TypeWriter from "../components/TypeWriter";
 import { Link } from "react-router-dom";
 
@@ -13,23 +13,25 @@ const RedSuperGiantScreen = () => {
 
   return (
     <ScreenContainer>
-      <TypeWriter type={"subTitle"} stringArr={["Low Mass Star"]} />
-      <ImgContainer src={smallStar} />
+      <TypeWriter type={"subTitle"} stringArr={["Red Super Giant"]} />
+      <ImgContainer src={redGiant} />
       <Description>
         <TypeWriter
           type={"body"}
           stringArr={[
-            "Low mass stars are generally cooler and shine less brightly giving the star a more red appearance.",
-            "The sun we know is a low mass star.",
-            "After billions years, the star will start burning its helium.",
-            "When the star is out of hydrogen to burn...",
+            "The super giant will burn the helium in its core until it runs out.",
+            "Then repeat the process with carbon.",
+            "Then so on with heavier metals until it begins to fuse iron.",
+            "Finally, the core will stop fusion altogether.",
+            "Now there is no more pressure pushing out from fusion, there is nothing counteracting the gravity pushing inward.",
+            "The super giant collapses into itself and explodes...",
           ]}
           onComplete={handleFirstComplete}
           fadeOut
         />
       </Description>
       {firstDone && (
-        <Next>
+        <Next to={"/planetary-nebula"}>
           <TypeWriter type={"body"} stringArr={["Next ->"]} />
         </Next>
       )}

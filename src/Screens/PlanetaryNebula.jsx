@@ -29,7 +29,7 @@ const PlanetaryNebula = () => {
         />
       </Description>
       {firstDone && (
-        <Next>
+        <Next to={"/white-dwarf"}>
           <TypeWriter type={"body"} stringArr={["Next ->"]} />
         </Next>
       )}

@@ -11,21 +11,32 @@ import SmallStarScreen from "./Screens/SmallStarScreen";
 import RedGiantScreen from "./Screens/RedGiantScreen";
 import RedSuperGiantScreen from "./Screens/RedSuperGiantScreen";
 import PlanetaryNebula from "./Screens/PlanetaryNebula";
+import WhiteDwarfScreen from "./Screens/WhiteDwarfScreen";
+import BlackDwarfScreen from "./Screens/BlackDwarfScreen";
+import SupernovaScreen from "./Screens/SupernovaScreen";
+import BlackholeScreen from "./Screens/BlackholeScreen";
+import NeutronStarScreen from "./Screens/NeutronStarScreen";
+import ProgressBar from "./components/ProgressBar";
 
 function App() {
   return (
     <AppContainer className="App">
       <BackgroundImage src={background} alt="background" />
+      <ProgressBar />
       <Routes>
         <Route path="/" element={<TitleScreen />} />
         <Route path="/gas-cloud" element={<GasCloudScreen />} />
         <Route path="/protostar" element={<ProtostarScreen />} />
-        <Route path="/bigstar" element={<BigStarScreen />} />
-        <Route path="/smallstar" element={<SmallStarScreen />} />
+        <Route path="/big-star" element={<BigStarScreen />} />
+        <Route path="/small-star" element={<SmallStarScreen />} />
         <Route path="/red-giant" element={<RedGiantScreen />} />
         <Route path="/red-super-giant" element={<RedSuperGiantScreen />} />
-        <Route path="/red-super-giant" element={<RedSuperGiantScreen />} />
         <Route path="/planetary-nebula" element={<PlanetaryNebula />} />
+        <Route path="/white-dwarf" element={<WhiteDwarfScreen />} />
+        <Route path="/black-dwarf" element={<BlackDwarfScreen />} />
+        <Route path="/supernova" element={<SupernovaScreen />} />
+        <Route path="/black-hole" element={<BlackholeScreen />} />
+        <Route path="/neutron-star" element={<NeutronStarScreen />} />
       </Routes>
     </AppContainer>
   );
@@ -54,15 +65,4 @@ const BackgroundImage = styled.img`
   top: 0;
   left: 0;
   object-fit: fill;
-`;
-
-const TitleContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const Explore = styled.div`
-  display: flex;
 `;
