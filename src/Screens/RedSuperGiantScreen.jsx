@@ -39,7 +39,7 @@ const RedSuperGiantScreen = () => {
         />
       </Description>
       {firstDone && (
-        <Next to={"/planetary-nebula"} onClick={() => updateProgress("death")}>
+        <Next to={"/supernova"} onClick={() => updateProgress("death")}>
           <TypeWriter type={"body"} stringArr={["Next ->"]} />
         </Next>
       )}

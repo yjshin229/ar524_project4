@@ -10,20 +10,17 @@ const TypeWriter = ({
   style,
   startWhenVisible = false,
   onComplete = null,
-  showCursor = true,
   fadeOut = false,
 }) => {
   const typedProps = {
     strings: stringArr,
-    typeSpeed: 40,
+    typeSpeed: 60,
     backSpeed: backSpeed,
+    backDelay: 10000,
   };
 
   if (onComplete) {
     typedProps.onComplete = onComplete;
-  }
-  if (!showCursor) {
-    typedProps.showCursor = false;
   }
   if (fadeOut) {
     typedProps.fadeOut = true;
@@ -53,9 +50,13 @@ const TypeWriter = ({
           <ReactTyped {...typedProps} />
         </Body>
       );
+    default:
+      return (
+        <Body color={color}>
+          <ReactTyped {...typedProps} />
+        </Body>
+      );
   }
-
-  return <div>TypeWriter</div>;
 };
 
 export default TypeWriter;
@@ -63,12 +64,16 @@ export default TypeWriter;
 const Title = styled.h1`
   color: ${(props) => props.color};
   z-index: 1;
+  background-color: black;
 `;
 const SubTitle = styled.h3`
   color: ${(props) => props.color};
   z-index: 1;
+  background-color: black;
 `;
 const Body = styled.span`
   color: ${(props) => props.color};
   z-index: 1;
+  background-color: black;
+  font-weight: 500;
 `;

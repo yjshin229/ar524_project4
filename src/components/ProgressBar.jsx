@@ -50,14 +50,14 @@ const ProgressBarContainer = styled.div`
 `;
 
 const Bar = styled.div`
-  background-color: #9191914d;
+  background-color: #7b89c08e;
   width: 100%;
   height: 1em;
   border-radius: 1rem;
 `;
 
 const Progress = styled.div`
-  background-color: #b3b3b3a1;
+  background-color: #8799e3dd;
   width: ${(props) => props.width};
   height: 100%;
   border-radius: 1rem;
