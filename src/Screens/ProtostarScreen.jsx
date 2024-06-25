@@ -26,17 +26,6 @@ const ProtostarScreen = () => {
           onComplete={handleFirstComplete}
           fadeOut
         />
-        {/*   
-        {option === "slower" ? (
-            <TypeWriter
-            type={"body"}
-            stringArr={[
-              "Burning helium slower resulted a protostar to burn much ",
-            ]} 
-            onComplete={handleFirstComplete}
-            fadeOut
-          />
-         */}
       </Description>
       {firstDone && (
         <Options>
@@ -69,6 +58,7 @@ const ImgContainer = styled.img`
 `;
 
 const Description = styled.div`
+  width: 60%;
   margin-top: 2rem;
 `;
 

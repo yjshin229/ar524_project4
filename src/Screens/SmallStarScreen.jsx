@@ -29,7 +29,7 @@ const SmallStarScreen = () => {
         />
       </Description>
       {firstDone && (
-        <Next>
+        <Next to={"/red-giant"}>
           <TypeWriter type={"body"} stringArr={["Next ->"]} />
         </Next>
       )}

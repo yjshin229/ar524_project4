@@ -1,14 +1,16 @@
 import background from "./assets/space_background.png";
 import "./App.css";
-import styled, { createGlobalStyle } from "styled-components";
-import TypeWriter from "./components/TypeWriter";
-import { useState } from "react";
+import styled from "styled-components";
+
 import { Route, Routes } from "react-router-dom";
 import TitleScreen from "./Screens/TitleScreen";
 import GasCloudScreen from "./Screens/GasCloudScreen";
 import ProtostarScreen from "./Screens/ProtostarScreen";
 import BigStarScreen from "./Screens/BigStarScreen";
 import SmallStarScreen from "./Screens/SmallStarScreen";
+import RedGiantScreen from "./Screens/RedGiantScreen";
+import RedSuperGiantScreen from "./Screens/RedSuperGiantScreen";
+import PlanetaryNebula from "./Screens/PlanetaryNebula";
 
 function App() {
   return (
@@ -20,6 +22,10 @@ function App() {
         <Route path="/protostar" element={<ProtostarScreen />} />
         <Route path="/bigstar" element={<BigStarScreen />} />
         <Route path="/smallstar" element={<SmallStarScreen />} />
+        <Route path="/red-giant" element={<RedGiantScreen />} />
+        <Route path="/red-super-giant" element={<RedSuperGiantScreen />} />
+        <Route path="/red-super-giant" element={<RedSuperGiantScreen />} />
+        <Route path="/planetary-nebula" element={<PlanetaryNebula />} />
       </Routes>
     </AppContainer>
   );
