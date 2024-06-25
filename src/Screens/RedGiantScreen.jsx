@@ -68,24 +68,6 @@ const Description = styled.div`
   margin-top: 2rem;
 `;
 
-const Options = styled.div`
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 5rem;
-  width: 50%;
-  height: 1.2em;
-`;
-
-const Option = styled(Link)`
-  text-decoration: none;
-
-  &:hover {
-    cursor: pointer;
-    font-size: 1.2em;
-  }
-`;
-
 const Next = styled(Link)`
   display: flex;
   position: absolute;

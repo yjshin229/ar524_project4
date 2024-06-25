@@ -93,15 +93,3 @@ const Option = styled(Link)`
     font-size: 1.2em;
   }
 `;
-
-const Next = styled(Link)`
-  display: flex;
-  position: absolute;
-  bottom: 5rem;
-  text-decoration: none;
-  margin-top: 2rem;
-  &:hover {
-    cursor: pointer;
-    font-size: 1.2em;
-  }
-`;
