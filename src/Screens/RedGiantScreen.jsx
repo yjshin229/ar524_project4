@@ -64,7 +64,7 @@ const ImgContainer = styled.img`
 `;
 
 const Description = styled.div`
-  width: 60%;
+  width: 50%;
   margin-top: 2rem;
 `;
 
