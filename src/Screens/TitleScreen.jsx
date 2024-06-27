@@ -50,6 +50,8 @@ const TitleContainer = styled.div`
 const Explore = styled(Link)`
   display: flex;
   text-decoration: none;
+  position: absolute;
+  bottom: 18rem;
   &:hover {
     cursor: pointer;
     font-size: 1.2em;
